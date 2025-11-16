@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Share2, Clock, Calendar, Star, ChevronUp } from 'lucide-react';
 import AuthorCard from '../components/AuthorCard';
 import RelatedBlogs from '../components/RelatedBlogs';
+import Navbar from '../components/NavBar';
 
 // Mock blog data
 const blogData = {
@@ -93,7 +94,6 @@ const relatedBlogs = [
 const BlogDetailsPage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [rating, setRating] = useState(0);
-  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -113,7 +113,8 @@ const BlogDetailsPage = () => {
 
 
   return (
-    <div className="min-h-screen bg-[#E2E8D7]">
+    <div className="min-h-screen bg-[#E2E8D7]"> 
+     <Navbar/>
       {/* Hero Section */}
       <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         <img 

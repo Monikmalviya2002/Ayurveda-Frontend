@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Search, User, Sparkles, Leaf, Calendar } from 'lucide-react';
 import BlogCard from '../components/BlogCard';
 import BlogCardSkeleton from '../components/BlogCardSkeleton';
+import Navbar from '../components/NavBar';
 
 const blogData = [
     {
@@ -136,27 +137,8 @@ export const BlogsPage = () => {
     }, [searchTerm, activeCategory]);
 
     return (
-        <div className="min-h-screen bg-[#E2E8D7]">
-            {/* Navbar */}
-            <div className="navbar bg-white shadow-lg px-4 lg:px-8 sticky top-0 z-50 border-b-2" style={{ borderColor: '#BDC2B3' }}>
-                <div className="flex-1">
-                    <a className="flex items-center gap-2 text-xl lg:text-2xl font-bold" style={{ color: '#403D27' }}>
-                        <Leaf style={{ color: '#B7B687' }} size={28} />
-                        AyurVeda
-                    </a>
-                </div>
-                <div className="flex-none gap-2">
-                    <div className="badge badge-lg border-none text-white px-3 py-2"
-                        style={{ background: 'linear-gradient(to right, #B7B687, #6d7571)' }}>
-                        <Sparkles size={14} className="mr-1" />
-                        Premium
-                    </div>
-                    <button className="btn btn-circle btn-ghost" style={{ color: '#403D27' }}>
-                        <User size={20} />
-                    </button>
-                </div>
-            </div>
-
+        <div className="min-h-screen bg-[#E2E8D7]"> 
+            <Navbar/>
             {/* Hero Section */}
             <div className="w-full py-12 lg:py-20 px-4" style={{ background: 'linear-gradient(135deg, #E2E8D7 0%, #BDC2B3 50%, #E2E8D7 100%)' }}>
                 <div className="max-w-6xl mx-auto">
