@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HeroSection({ onFindDoctor, onExploreWisdom }) {
   return (
-    <section className="relative h-screen max-h-96 md:max-h-screen bg-gradient-to-r from-green-50 to-green-100 overflow-hidden">
+    <section className="relative h-screen max-h-96 md:max-h-screen bg-linear-to-r from-green-50 to-green-100 overflow-hidden">
 
       <div className="relative z-10 flex items-center h-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
