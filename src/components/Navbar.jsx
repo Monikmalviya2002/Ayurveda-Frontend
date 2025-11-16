@@ -19,7 +19,7 @@ export default function Navbar({ onLoginClick, onSignupClick }) {
           <div className="hidden md:flex gap-8 items-center">
             <Link to="/" className="hover:text-amber-200 transition">Home</Link>
             <Link to="/blogs" className="hover:text-amber-200 transition">Blogs</Link>
-            <Link to="/VideoDashboard" className="hover:text-amber-200 transition">Videos</Link>
+            <Link to="/videos" className="hover:text-amber-200 transition">Videos</Link>
             <Link to="/doctors" className="hover:text-amber-200 transition">Doctors</Link>
             <Link to="/account" className="hover:text-amber-200 transition">My Account</Link>
          </div>
