@@ -24,21 +24,24 @@ export default function Navbar({ onLoginClick, onSignupClick }) {
          </div>
 
           <div className="hidden md:flex items-center gap-4">
+            <Link to="/login">
             <button
-              onClick={onLoginClick}
+              //onClick={onLoginClick}
               className="btn btn-ghost text-white hover:text-amber-200"
             >
               Login
             </button>
-
+            </Link>
+            <Link to="/login">
             <button
-              onClick={onSignupClick}
+              //onClick={onSignupClick}
               className="btn bg-amber-200 text-green-900 font-semibold rounded-full hover:bg-amber-300 border-none"
             >
               Sign Up
             </button>
-          </div>
+            </Link>
 
+          </div>
           <div className="md:hidden">
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost text-white">
