@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
+
 export default function Navbar({ onLoginClick, onSignupClick }) {
   return (
     <nav className="navbar sticky top-0 z-40 bg-gradient-to-r from-green-800 to-green-700 shadow-lg text-white w-full">
@@ -18,7 +19,7 @@ export default function Navbar({ onLoginClick, onSignupClick }) {
           <div className="hidden md:flex gap-8 items-center">
             <Link to="/" className="hover:text-amber-200 transition">Home</Link>
             <Link to="/blogs" className="hover:text-amber-200 transition">Blogs</Link>
-            <Link to="/videos" className="hover:text-amber-200 transition">Videos</Link>
+            <Link to="/VideoDashboard" className="hover:text-amber-200 transition">Videos</Link>
             <Link to="/doctors" className="hover:text-amber-200 transition">Doctors</Link>
             <Link to="/account" className="hover:text-amber-200 transition">My Account</Link>
          </div>
@@ -49,13 +50,15 @@ export default function Navbar({ onLoginClick, onSignupClick }) {
                 className="dropdown-content menu p-2 shadow bg-green-800 rounded-box w-48"
               >
                 <li><Link to="/">Home</Link></li>
-                <li><a>Blogs</a></li>
-                <li><a>Videos</a></li>
-                <li><a>Doctors</a></li>
-                <li><a>My Account</a></li>
-
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/blogs">Blogs</Link></li>
+                <li><Link to="/VideoDashboard">Videos</Link></li>
+                <li><Link to="/doctors">Doctors</Link></li>
+                <li><Link to="/account">My Account</Link></li>
                 <li><button onClick={onLoginClick}>Login</button></li>
                 <li><button onClick={onSignupClick}>Sign Up</button></li>
+
+                
               </ul>
             </div>
           </div>
