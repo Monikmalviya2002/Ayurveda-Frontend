@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Home from './pages/HomePage';
 import { BlogsPage } from './pages/BlogsPage';
 import BlogDetailsPage from './pages/BlogDetailsPage';
+import AdminPage from './pages/Admin/AdminPage';
 
 export default function App() {
   return (
@@ -14,6 +15,8 @@ export default function App() {
           <Route path="/login" element={<Login />} /> 
           <Route path='/blogs' element={<BlogsPage/>} /> 
           <Route path='/blogs/:blogId' element={<BlogDetailsPage/>}/>
+
+          <Route path='/admin-dashboard' element={<AdminPage/>}/>
           <Route path="*" element={<div className="p-8 text-center">Page not found</div>} />
         </Routes>
       </main>
