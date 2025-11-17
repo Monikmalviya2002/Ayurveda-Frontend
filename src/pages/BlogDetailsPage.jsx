@@ -90,7 +90,7 @@ const relatedBlogs = [
 ];
 
 
-// Main BlogDetailsPage Component
+
 const BlogDetailsPage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [rating, setRating] = useState(0);
@@ -113,7 +113,7 @@ const BlogDetailsPage = () => {
 
 
   return (
-    <div className="min-h-screen bg-[#E2E8D7]"> 
+    <div className="min-h-screen bg-[#E2E8D7] font-body"> 
      <Navbar/>
       {/* Hero Section */}
       <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
@@ -126,7 +126,7 @@ const BlogDetailsPage = () => {
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-white">
           <div className="max-w-4xl mx-auto">
             <div className="badge bg-[#B7B687] text-white border-none mb-4">{blogData.category}</div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-3 leading-tight">{blogData.title}</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-3 leading-tight font-heading">{blogData.title}</h1>
             {blogData.subtitle && (
               <p className="text-lg md:text-xl text-gray-200 mb-4">{blogData.subtitle}</p>
             )}

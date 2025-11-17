@@ -5,6 +5,7 @@ import Home from './pages/HomePage';
 import { BlogsPage } from './pages/BlogsPage';
 import BlogDetailsPage from './pages/BlogDetailsPage';
 import VideoDashboard from './components/VideoDashboard';
+import DoctorDirectoryPage from './pages/DoctorsDirectoryPage';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
           <Route path="/login" element={<Login />} /> 
           <Route path='/blogs' element={<BlogsPage/>} /> 
           <Route path='/blogs/:blogId' element={<BlogDetailsPage/>}/>
-          <Route path='/videos' element={<VideoDashboard/>}/>
+          <Route path='/videos' element={<VideoDashboard/>}/> 
+          <Route path='/doctors' element={<DoctorDirectoryPage/>} />
           <Route path="*" element={<div className="p-8 text-center">Page not found</div>} />
         </Routes>
       </main>
