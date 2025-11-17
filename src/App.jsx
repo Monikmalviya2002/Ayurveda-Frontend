@@ -6,6 +6,7 @@ import { BlogsPage } from './pages/BlogsPage';
 import BlogDetailsPage from './pages/BlogDetailsPage';
 import VideoDashboard from './components/VideoDashboard';
 import DoctorDirectoryPage from './pages/DoctorsDirectoryPage';
+import AdminPage from './pages/Admin/AdminPage';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path='/blogs/:blogId' element={<BlogDetailsPage/>}/>
           <Route path='/videos' element={<VideoDashboard/>}/> 
           <Route path='/doctors' element={<DoctorDirectoryPage/>} />
+          <Route path='/admin' element={<AdminPage/>} />
           <Route path="*" element={<div className="p-8 text-center">Page not found</div>} />
         </Routes>
       </main>
