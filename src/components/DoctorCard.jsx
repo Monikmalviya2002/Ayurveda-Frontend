@@ -1,5 +1,7 @@
 import { MessageSquare, Phone, Star, Video } from 'lucide-react'
 import React from 'react'
+import { Link } from "react-router-dom";
+
 
 const DoctorCard = ({doctor}) => {
     return (
@@ -68,9 +70,13 @@ const DoctorCard = ({doctor}) => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">
-                    <button className="btn flex-1 btn-outline border-[#BDC2B3] text-[#403D27] hover:bg-[#E2E8D7] hover:border-[#B7B687]">
-                        View Profile
-                    </button>
+                    
+            <Link to={`/doctors/${doctor.id}`}
+         className="btn flex-1 btn-outline border-[#BDC2B3] text-[#403D27] hover:bg-[#E2E8D7] 
+              hover:border-[#B7B687]">
+
+                  View Profile
+                </Link>
                     <button className="btn flex-1 bg-linear-to-r from-[#403D27] to-[#6d7571] text-white border-none hover:opacity-90">
                         Consult Now
                     </button>

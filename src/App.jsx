@@ -5,11 +5,7 @@ import Home from './pages/HomePage';
 import { BlogsPage } from './pages/BlogsPage';
 import BlogDetailsPage from './pages/BlogDetailsPage';
 import VideoDashboard from './components/VideoDashboard';
-import DoctorDirectoryPage from './pages/DoctorsDirectoryPage'; 
-import AdminPage from './pages/Admin/AdminPage'
-import ConsultationBookingPage from './pages/ConsultationBookingPage';
-
-
+import DoctorDirectoryPage from './pages/DoctorsDirectoryPage';
 
 export default function App() {
   return (
@@ -21,9 +17,7 @@ export default function App() {
           <Route path='/blogs' element={<BlogsPage/>} /> 
           <Route path='/blogs/:blogId' element={<BlogDetailsPage/>}/>
           <Route path='/videos' element={<VideoDashboard/>}/> 
-          <Route path='/doctors' element={<DoctorDirectoryPage/>} /> 
-          <Route path='/admin' element={<AdminPage/>} />   
-          <Route path='/consult' element={<ConsultationBookingPage/>}/>
+          <Route path='/doctors' element={<DoctorDirectoryPage/>} />
           <Route path="*" element={<div className="p-8 text-center">Page not found</div>} />
         </Routes>
       </main>
