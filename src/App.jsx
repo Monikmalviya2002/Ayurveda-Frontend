@@ -20,10 +20,8 @@ export default function App() {
           <Route path='/blogs' element={<BlogsPage/>} /> 
           <Route path='/blogs/:blogId' element={<BlogDetailsPage/>}/>
           <Route path='/videos' element={<VideoDashboard/>}/> 
-          <Route path='/doctors' element={<DoctorDirectoryPage/>} /> 
-          <Route path='/doctors/:id' element={<DoctorProfile/>} /> 
-          <Route path='/admin' element={<AdminPage/>}/> 
-          <Route path='/test' element={<BlogCreateForm/>}/>
+          <Route path='/doctors' element={<DoctorDirectoryPage/>} />
+          <Route path='/admin' element={<AdminPage/>} />
           <Route path="*" element={<div className="p-8 text-center">Page not found</div>} />
         </Routes>
       </main>

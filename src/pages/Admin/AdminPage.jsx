@@ -37,8 +37,14 @@ export default function AdminPage() {
         />
       </header>
 
-      <div className="drawer drawer-mobile">
-        <input id="admin-drawer" type="checkbox" className="drawer-toggle" checked={sidebarOpen} readOnly />
+      <div className="drawer drawer-mobile min-h-screen">
+        <input
+          id="admin-drawer"
+          type="checkbox"
+          className="drawer-toggle"
+          checked={sidebarOpen}
+          onChange={(e) => setSidebarOpen(e.target.checked)}
+        />
 
         <div className="drawer-side">
           <label
@@ -47,38 +53,27 @@ export default function AdminPage() {
             onClick={() => setSidebarOpen(false)}
           />
 
-          <aside className="w-72 bg-slate-800/80 backdrop-blur-md border-r border-slate-700 p-4">
+          <aside className="w-64 bg-slate-800/80 backdrop-blur-md border-r border-slate-700 ">
             <AdminSidebar
               activeTab={activeTab}
               onTabChange={(tab) => setActiveTab(tab)}
               isOpen={sidebarOpen}
               onClose={() => setSidebarOpen(false)}
             />
-
-            <div className="mt-6 text-sm text-slate-400">
-              <div>Logged in as</div>
-              <div className="font-medium text-slate-100">Admin</div>
-              <div className="mt-3">
-                <button
-                  className="btn btn-ghost btn-sm w-full text-left"
-                  onClick={() => {
-                    /* implement sign out */
-                  }}
-                >
-                  Sign out
-                </button>
-              </div>
-            </div>
+            <div className="mt-6 text-sm text-slate-400"></div>
           </aside>
         </div>
 
-        {/* Main content area */}
-        <div className="drawer-content flex flex-col min-h-screen">
+        <div className="drawer-content flex-1 flex flex-col min-h-screen bg-linear-to-r from-green-50 to-green-100 overflow-auto">
           <div className="p-6 lg:p-8">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
               <div>
-                <h1 className="text-2xl md:text-3xl font-bold text-white">Admin Dashboard</h1>
-                <p className="text-sm text-slate-300">Manage platform, users, content & analytics</p>
+                <h1 className="text-2xl md:text-3xl font-bold text-green-900">
+                  Admin Dashboard
+                </h1>
+                <p className="text-sm text-green-900 opacity-90 ">
+                  Manage platform, users, content & analytics
+                </p>
               </div>
 
               <div className="flex items-center gap-3">
@@ -87,53 +82,97 @@ export default function AdminPage() {
                   onClick={() => setSidebarOpen((s) => !s)}
                   aria-label="Toggle sidebar"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   </svg>
                 </button>
 
                 <div className="flex items-center gap-2">
-                  <button className="btn btn-sm btn-outline">New Announcement</button>
-                  <button className="btn btn-sm bg-amber-300 text-slate-900">Create Post</button>
+                  <button className="btn btn-sm bg-black text-white">
+                    New Announcement
+                  </button>
+                  <button className="btn btn-sm bg-amber-300 text-slate-900">
+                    Create Post
+                  </button>
                 </div>
               </div>
             </div>
 
-            <div className="tabs tabs-boxed bg-slate-800/60 rounded-full mb-6">
-              <button className={`tab ${activeTab === "overview" ? "tab-active" : ""}`} onClick={() => setActiveTab("overview")}>Overview</button>
-              <button className={`tab ${activeTab === "users" ? "tab-active" : ""}`} onClick={() => setActiveTab("users")}>Users</button>
-              <button className={`tab ${activeTab === "content" ? "tab-active" : ""}`} onClick={() => setActiveTab("content")}>Content</button>
-              <button className={`tab ${activeTab === "analytics" ? "tab-active" : ""}`} onClick={() => setActiveTab("analytics")}>Analytics</button>
-              <button className={`tab ${activeTab === "settings" ? "tab-active" : ""}`} onClick={() => setActiveTab("settings")}>Settings</button>
+            <div className="tabs tabs-boxed bg-white rounded-full mb-6 p-1">
+              {[
+                { id: "overview", label: "Overview" },
+                { id: "users", label: "Users" },
+                { id: "content", label: "Content" },
+                { id: "analytics", label: "Analytics" },
+                { id: "settings", label: "Settings" },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`
+                    tab text-green-900 font-semibold text-base 
+                    px-4 py-2 rounded-full transition-all duration-200
+                    ${
+                      activeTab === tab.id
+                        ? "tab-active bg-green-200 text-green-900 font-bold"
+                        : "hover:bg-green-100"
+                    }
+                  `}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
 
-            {/* Actual content area */}
             <div className="space-y-6">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="card bg-slate-800/60 p-4 rounded-2xl shadow">
-                  <div className="text-sm text-slate-300">Active users</div>
-                  <div className="text-2xl font-bold text-white mt-2">1,248</div>
+                <div className="card bg-emerald-900 p-4 rounded-2xl shadow-lg">
+                  <div className="text-sm text-white/90 font-medium">
+                    Active users
+                  </div>
+                  <div className="text-2xl font-bold text-white mt-2">
+                    1,248
+                  </div>
                 </div>
-                <div className="card bg-slate-800/60 p-4 rounded-2xl shadow">
-                  <div className="text-sm text-slate-300">New signups (7d)</div>
+
+                <div className="card bg-teal-900 p-4 rounded-2xl shadow-lg">
+                  <div className="text-sm text-white/90 font-medium">
+                    New signups (7d)
+                  </div>
                   <div className="text-2xl font-bold text-white mt-2">98</div>
                 </div>
-                <div className="card bg-slate-800/60 p-4 rounded-2xl shadow">
-                  <div className="text-sm text-slate-300">Pending reviews</div>
+
+                <div className="card bg-indigo-900 p-4 rounded-2xl shadow-lg">
+                  <div className="text-sm text-white/90 font-medium">
+                    Pending reviews
+                  </div>
                   <div className="text-2xl font-bold text-white mt-2">12</div>
                 </div>
               </div>
 
               <div className="mt-4">
-                <div className="bg-slate-800/50 rounded-2xl p-6 shadow-inner">
+                <div className="bg-[#FAF7F2] rounded-2xl p-6 shadow-md border border-[#E8E2D9]">
                   {renderContent()}
                 </div>
               </div>
             </div>
           </div>
 
-          <footer className="px-6 py-4 border-t border-slate-700 text-sm text-slate-400">
-            <div className="container mx-auto">© {new Date().getFullYear()} AYURCONNECT — Admin Console</div>
+          <footer className="px-6 py-4 bg-slate-800 border-t border-slate-700 text-sm text-slate-200 mt-auto">
+            <div className="container mx-auto font-bold">
+              © {new Date().getFullYear()} AYURCONNECT
+            </div>
           </footer>
         </div>
       </div>
