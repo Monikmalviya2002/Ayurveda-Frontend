@@ -8,6 +8,7 @@ import VideoDashboard from './components/VideoDashboard';
 import DoctorDirectoryPage from './pages/DoctorsDirectoryPage';
 import DoctorProfile from './pages/DoctorProfile'; 
 import AdminPage from './pages/Admin/AdminPage'
+import BlogCreateForm from './pages/Doctor/BlogCreateForm.jsx'
 
 export default function App() {
   return (
@@ -21,7 +22,8 @@ export default function App() {
           <Route path='/videos' element={<VideoDashboard/>}/> 
           <Route path='/doctors' element={<DoctorDirectoryPage/>} /> 
           <Route path='/doctors/:id' element={<DoctorProfile/>} /> 
-          <Route path='/admin' element={<AdminPage/>}/>
+          <Route path='/admin' element={<AdminPage/>}/> 
+          <Route path='/test' element={<BlogCreateForm/>}/>
           <Route path="*" element={<div className="p-8 text-center">Page not found</div>} />
         </Routes>
       </main>
