@@ -33,7 +33,7 @@ export default function Navbar({ onLoginClick, onSignupClick }) {
               Login
             </button>
             </Link>
-            <Link to="/login">
+            <Link to="/signup">
             <button
               //onClick={onSignupClick}
               className="btn bg-amber-200 text-green-900 font-semibold rounded-full hover:bg-amber-300 border-none"
@@ -53,15 +53,12 @@ export default function Navbar({ onLoginClick, onSignupClick }) {
                 className="dropdown-content menu p-2 shadow bg-green-800 rounded-box w-48"
               >
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/">Home</Link></li>
                 <li><Link to="/blogs">Blogs</Link></li>
                 <li><Link to="/VideoDashboard">Videos</Link></li>
                 <li><Link to="/doctors">Doctors</Link></li>
                 <li><Link to="/account">My Account</Link></li>
                 <li><button onClick={onLoginClick}>Login</button></li>
                 <li><button onClick={onSignupClick}>Sign Up</button></li>
-
-                
               </ul>
             </div>
           </div>

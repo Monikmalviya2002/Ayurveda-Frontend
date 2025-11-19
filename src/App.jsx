@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './components/Login';
+
 import Home from './pages/HomePage';
+import Login from './pages/Authentication/Login';
+import Signup from './pages/Authentication/Signup';
 import { BlogsPage } from './pages/BlogsPage';
 import BlogDetailsPage from './pages/BlogDetailsPage';
 import VideoDashboard from './components/VideoDashboard';
@@ -14,7 +16,8 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} /> 
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path='/blogs' element={<BlogsPage/>} /> 
           <Route path='/blogs/:blogId' element={<BlogDetailsPage/>}/>
           <Route path='/videos' element={<VideoDashboard/>}/> 
