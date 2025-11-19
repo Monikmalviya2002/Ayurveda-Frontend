@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from '../components/NavBar';
 import HeroSection from '../components/HeroSection';
-import Login from '../components/Login';
-
-/**
- * Home page
- * - Intro about Ayurveda
- * - Importance of balance / holistic health
- * - Certified Doctors highlight (sample cards)
- * - Keeps modal logic for Login / Signup
- */
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [mode, setMode] = useState('login'); // "login" | "signup"
+  const [mode, setMode] = useState('login');
 
   const openLogin = () => {
     setMode('login');
@@ -25,7 +16,6 @@ export default function Home() {
     setIsModalOpen(true);
   };
 
-  // sample doctors (replace with real data later)
   const doctors = [
     {
       id: 1,
@@ -55,12 +45,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-base-200">
-      {/* Navbar (kept inside container if you want centered content; remove wrapper for full-bleed) */}
       <header className="sticky top-0 z-50">
         <Navbar onLoginClick={openLogin} onSignupClick={openSignup} />
       </header>
 
-      {/* Hero */}
       <section className="container mx-auto">
         <HeroSection
           onFindDoctor={openLogin}
