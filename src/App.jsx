@@ -23,7 +23,7 @@ export default function App() {
           <Route path='/doctors' element={<DoctorDirectoryPage/>} /> 
           <Route path ='/doctors/:id' element={<DoctorProfile/>}/> 
            <Route path='/doctor/writeBlog' element={<BlogCreateForm/>}/>
-          <Route path='/admin' element={<AdminPage/>} />
+          <Route path='/admin' element={<AdminPage/>} /> 
           <Route path="*" element={<div className="p-8 text-center">Page not found</div>} />
         </Routes>
       </main>
